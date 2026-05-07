@@ -1,0 +1,47 @@
+{
+  "name": "yaoming-test",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:llm": "RUN_LLM_TESTS=1 vitest run __tests__/agent_smoke.test.ts __tests__/e2e __tests__/verifier.test.ts __tests__/http/routes_smoke.test.ts",
+    "test:watch": "vitest",
+    "test:spike": "RUN_LLM_TESTS=1 RUN_SPIKES=1 vitest run __tests__/hitl_spike.test.ts __tests__/hitl_stream_spike.test.ts",
+    "eval:run": "tsx eval/runner.ts",
+    "demo:checklist": "tsx scripts/demo-checklist.ts",
+    "helpdesk": "tsx src/cli/close-ticket.ts"
+  },
+  "dependencies": {
+    "@langchain/anthropic": "^1.3.28",
+    "@langchain/core": "^1.1.44",
+    "@langchain/google-genai": "^2.1.30",
+    "@langchain/langgraph": "^1.2.9",
+    "@langchain/mcp-adapters": "^1.1.3",
+    "@langchain/openai": "^1.4.5",
+    "dotenv": "^17.4.2",
+    "gray-matter": "^4.0.3",
+    "langchain": "^1.3.5",
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "yaml": "^2.8.4",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/ui": "^4.1.5",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vitest": "^4.1.5"
+  }
+}

@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Intercom-derived design tokens (see DESIGN.md)
+   Cream canvas + charcoal + Fin Orange. Saans → Inter substitute.
+
+   Tailwind v4: @theme registers tokens AND generates utility
+   classes (.bg-canvas, .text-ink, etc). Values must be literal
+   hex / lengths — `var()` references are not introspected.
+   ============================================================ */
+
+@theme {
+  /* Brand & accent — generates bg-/text-/border-* utilities */
+  --color-ink: #111111;
+  --color-ink-muted: #626260;
+  --color-ink-subtle: #7b7b78;
+  --color-ink-tertiary: #9c9fa5;
+  --color-on-primary: #ffffff;
+
+  /* Surface */
+  --color-canvas: #f5f1ec;
+  --color-surface-1: #ffffff;
+  --color-surface-2: #ebe7e1;
+  --color-inverse-canvas: #000000;
+
+  /* Hairline */
+  --color-hairline: #d3cec6;
+  --color-hairline-soft: #ebe7e1;
+
+  /* Accents */
+  --color-fin-orange: #ff5600;
+  --color-brand-blue: #0007cb;
+
+  /* Semantic */
+  --color-semantic-error: #c41c1c;
+  --color-semantic-success: #0bdf50;
+
+  /* Report palette (in-product mockups; not brand surfaces) */
+  --color-report-blue: #65b5ff;
+  --color-report-pink: #ff2067;
+  --color-report-lime: #b3e01c;
+  --color-report-cyan: #03b2cb;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 24px;
+  --radius-pill: 9999px;
+
+  /* Type — Saans substitute via local system stack; no network fetch during build */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+}
+
+/* ----------- Base ----------- */
+html,
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Negative letter-spacing tiers — emulate Saans display tracking */
+.tracking-display-xl { letter-spacing: -0.0277em; }
+.tracking-display-lg { letter-spacing: -0.025em; }
+.tracking-display-md { letter-spacing: -0.02em; }
+.tracking-headline { letter-spacing: -0.018em; }
+.tracking-card-title { letter-spacing: -0.014em; }
+
+/* Subtle thinking-pulse animation for agent indicator */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 1.4s ease-in-out infinite;
+}
+
+/* Staggered fade-in for hero on first load */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-rise-in {
+  animation: rise-in 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scrollbar — keep on cream so it doesn't break the calm */
+.scroll-cream::-webkit-scrollbar { width: 8px; }
+.scroll-cream::-webkit-scrollbar-track { background: transparent; }
+.scroll-cream::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border-radius: 4px;
+}
+.scroll-cream::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-tertiary);
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-on-primary);
+}

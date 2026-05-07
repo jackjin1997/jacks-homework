@@ -1,0 +1,24 @@
+access_rules:
+  - action: grant_snowflake_prod_readonly
+    auto_approve_if:
+      - user.team == "data-engineering"
+      - user has "snowflake-dev" in groups
+    else: manager_approval
+
+  - action: grant_snowflake_prod_admin
+    auto_approve_if: never
+    else: manager_approval
+
+  - action: grant_grafana_readonly
+    auto_approve_if:
+      - user.team in ["data-engineering", "product", "sre"]
+    else: manager_approval
+
+  - action: grant_salesforce_admin
+    auto_approve_if: never
+    else: manager_approval
+
+approval_required:
+  - any group containing "admin"
+  - any group containing "prod-write"
+  - any action labelled "irreversible"

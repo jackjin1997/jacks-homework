@@ -1,0 +1,139 @@
+{
+  "u-001": {
+    "id": "u-001",
+    "name": "Alice Chen",
+    "email": "alice@example.com",
+    "team": "data-engineering",
+    "manager": "u-100",
+    "device": {
+      "model": "MacBook Pro 14 M3",
+      "os": "macOS 14.5"
+    },
+    "groups": [
+      "okta-sso",
+      "grafana-readonly",
+      "snowflake-dev"
+    ],
+    "location": "Shanghai",
+    "last_ticket": null
+  },
+  "u-002": {
+    "id": "u-002",
+    "name": "Bob Wang",
+    "email": "bob@example.com",
+    "team": "sales",
+    "manager": "u-101",
+    "device": {
+      "model": "ThinkPad X1",
+      "os": "Windows 11"
+    },
+    "groups": [
+      "okta-sso",
+      "salesforce-rep"
+    ],
+    "location": "Beijing",
+    "last_ticket": "T-2026-04-22-001"
+  },
+  "u-003": {
+    "id": "u-003",
+    "name": "Carol Liu",
+    "email": "carol@example.com",
+    "team": "product",
+    "manager": "u-101",
+    "device": {
+      "model": "MacBook Air M2",
+      "os": "macOS 14.4"
+    },
+    "groups": [
+      "okta-sso",
+      "figma-edit"
+    ],
+    "location": "Chicago",
+    "last_ticket": null
+  },
+  "u-004": {
+    "id": "u-004",
+    "name": "Eve Sun",
+    "email": "eve@example.com",
+    "team": "sre",
+    "manager": "u-100",
+    "device": {
+      "model": "MacBook Pro 14 M3",
+      "os": "macOS 14.5"
+    },
+    "groups": [
+      "okta-sso",
+      "grafana-readonly",
+      "snowflake-prod-readonly"
+    ],
+    "location": "Singapore",
+    "last_ticket": null
+  },
+  "u-005": {
+    "id": "u-005",
+    "name": "Frank Zhang",
+    "email": "frank@example.com",
+    "team": "marketing",
+    "manager": "u-101",
+    "device": {
+      "model": "MacBook Air M2",
+      "os": "macOS 14.4"
+    },
+    "groups": [
+      "okta-sso"
+    ],
+    "location": "Beijing",
+    "last_ticket": null
+  },
+  "u-006": {
+    "id": "u-006",
+    "name": "Grace Wu (Manager)",
+    "email": "grace@example.com",
+    "team": "product",
+    "manager": null,
+    "device": {
+      "model": "ThinkPad X1",
+      "os": "Windows 11"
+    },
+    "groups": [
+      "okta-sso",
+      "approver-product"
+    ],
+    "location": "Shanghai",
+    "last_ticket": null
+  },
+  "u-100": {
+    "id": "u-100",
+    "name": "Diana Zhao (Manager)",
+    "email": "diana@example.com",
+    "team": "data-engineering",
+    "manager": null,
+    "device": {
+      "model": "MacBook Pro 16 M3",
+      "os": "macOS 14.5"
+    },
+    "groups": [
+      "okta-sso",
+      "approver-data-eng"
+    ],
+    "location": "Shanghai",
+    "last_ticket": null
+  },
+  "u-101": {
+    "id": "u-101",
+    "name": "Henry Kim (Manager)",
+    "email": "henry@example.com",
+    "team": "sales",
+    "manager": null,
+    "device": {
+      "model": "iPhone 15 Pro",
+      "os": "iOS 17"
+    },
+    "groups": [
+      "okta-sso",
+      "approver-sales"
+    ],
+    "location": "Seoul",
+    "last_ticket": null
+  }
+}
