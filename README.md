@@ -42,7 +42,7 @@ agent 在工单生命周期里扮演 driver 角色 — **问题描述 → 主导
 
 这套 "AI 工单 + 人工兜底" 的模板可以作为模块嵌入其他自动化链路：
 - **SRE on-call**：agent 接 alert，先尝试 runbook，失败再 page 人
-- **代码协作**：agent 接 GitHub issue 尝试小 PR（参考 stripe-minions / langchain-openswe）
+- **代码协作**：工单升级时下游不一定是人。如果 helpdesk agent 诊断出这是代码问题（比如"登录按钮 500"、"某页面报错"），可以把 HandoffPacket 直接路由给 **coding agent** — 例如 [Stripe Minions](https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents)（沙盒里 one-shot 出 PR，实测每周 merge 1000+）或 [LangChain OpenSWE](https://github.com/langchain-ai/open-swe)（同类开源框架）。helpdesk agent 在这个语境里是**工单分诊台**：认准问题域，把工单送到对的下游（人 / SRE 工具 / coding agent）。
 - **客服**：agent 接客户咨询，识别需要人工的场景升级
 
 本项目演示 "IT 工单" 切片，但同一框架（state machine + HITL + saga + KB 沉淀）在其他领域复用。

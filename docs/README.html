@@ -331,13 +331,14 @@
   </div>
   <div class="card" style="border-left:4px solid #6d28d9">
     <h4>代码协作</h4>
-    <div class="desc">agent 接 GitHub issue 尝试小 PR(参考 stripe-minions / langchain-openswe)</div>
+    <div class="desc">工单升级时下游不一定是人。诊断出代码问题(如"登录 500"),可把 HandoffPacket 直接路由给 <strong>coding agent</strong> — <a href="https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents" target="_blank">Stripe Minions</a>(沙盒 one-shot 出 PR,1000+/周)或 <a href="https://github.com/langchain-ai/open-swe" target="_blank">OpenSWE</a>。helpdesk agent 在这里是<strong>分诊台</strong>:认准问题域 → 送到对的下游(人 / SRE 工具 / agent)。</div>
   </div>
   <div class="card" style="border-left:4px solid #6d28d9">
     <h4>客服</h4>
     <div class="desc">agent 接客户咨询,识别需要人工的场景升级</div>
   </div>
 </div>
+
 <div class="note">本项目演示 "IT 工单" 切片,但同一框架(state machine + HITL + saga + KB 沉淀)在其他领域复用。</div>
 
 <!-- § 跑起来 -->
